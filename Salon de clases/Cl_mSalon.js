@@ -6,8 +6,11 @@ export default class Cl_mSalon{
     agregarEstudiante(e){
         this.arrayEstud.push(e);
     }
-
     edadPromedio(){
+        let promedio= this.arrayEstud.reduce((acum,e)=>(acum+e.edad),0)/this.arrayEstud.length;
+        return promedio;
+    }
+    /*edadPromedio(){
     let acumEdad=0,
         cntEstud=0;
     this.arrayEstud.forEach((e)=>{
@@ -15,7 +18,7 @@ export default class Cl_mSalon{
              cntEstud++;
         });
         return acumEdad/cntEstud;    
-    }   
+    }  */ 
     estudianteMayor(){
         let auxMayor=0;
         let auxNombre="";
@@ -28,6 +31,11 @@ export default class Cl_mSalon{
             return auxNombre;
     }
     porcentajeChicasMayorEdad(){
+    let chicas=this.arrayEstud.reduce((chicasmay,e)=>(e.sexo=="F" && e.edad>=18)?chicasmay+1:chicasmay,0);
+    let totalChicas=this.arrayEstud.reduce((totalchicas,e)=>(e.sexo=="F")?totalchicas+1:totalchicas,0);
+    return (chicas/totalChicas)*100;    
+    }
+    /*porcentajeChicasMayorEdad(){
         let contChicas=0;
         let contChicasMayor=0;
         this.arrayEstud.forEach((e)=>{
@@ -39,13 +47,5 @@ export default class Cl_mSalon{
             } 
     });
     return (contChicasMayor/contChicas)*100;
-    }}
-    
-/*edadMayor() {
-    let mayor = 0;
-    this.estudiantes.forEach((e) => {
-      if (e.edad > mayor) mayor = e.edad;
-    });
-    return mayor;
-  }
-  */
+    }}*/
+}
