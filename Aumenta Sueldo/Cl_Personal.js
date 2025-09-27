@@ -6,9 +6,9 @@ export default class Cl_Personal {
     }
     aumento(){
           if(this.tipo==1){
-                return this.sueldo*(10/100);
-            }else if(this.tipo==2){
                 return this.sueldo*(20/100);
+            }else if(this.tipo==2){
+                return this.sueldo*(10/100);
             }
         }
 }

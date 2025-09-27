@@ -14,7 +14,7 @@ export default class Cl_Empresa {
     }
     
     totalPagoNuevo(){
-        this.acumPagoNuevo=this.arrayPersonal.reduce((acum,p)=>(acum+this.nuevoSueldo),0);
+        this.acumPagoNuevo=this.arrayPersonal.reduce((acum,p)=>(acum+p.aumento()),0);
         return this.acumPagoNuevo;
     }
 
@@ -28,3 +28,8 @@ export default class Cl_Empresa {
         return ((cntObreros/this.arrayPersonal.length))*100;
     }
 }
+/*totalPagoNuevo() {
+    return this.arrayPersonal.reduce((acum, p) => acum + p.aumento(), 0);
+}
+
+*/
