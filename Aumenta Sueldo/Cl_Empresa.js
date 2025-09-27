@@ -14,8 +14,8 @@ export default class Cl_Empresa {
     }
     
     totalPagoNuevo(){
-        this.acumPagoNuevo=this.arrayPersonal.reduce((acum,p)=>(acum+p.aumento()),0);
-        return this.acumPagoNuevo;
+       return this.acumPagoNuevo=this.arrayPersonal.reduce((acum,p)=>(acum+p.aumento()),0);
+       //return this.acumPagoNuevo;
     }
 
     porcentajeObrero(){
